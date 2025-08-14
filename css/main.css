@@ -1,0 +1,457 @@
+@charset "UTF-8";
+
+#wrap{overflow-x: hidden;}
+
+/* 공통 - 폼 */
+.inputTextBox{width: 100%;}
+.inputTextBox input{ padding: 0 10px; width: 100%; height: 53px; border: 1px solid #dddddd; font-size: 20px; color: #000;}
+.inputTextBox input::placeholder{color: #c2c2c2;}
+.textAreaBox{width: 100%;}
+.textAreaBox textarea{ padding: 20px 10px; width: 100%; height: 240px; border: 1px solid #dddddd; font-size: 20px; color: #000;}
+.textAreaBox textarea::placeholder{color: #c2c2c2;}
+.inputChkBox label{position: relative; padding-left: 37px; font-size: 20px; color: #000;}
+.inputChkBox label::before{content: ''; position: absolute; top:-2px; left:0; width: 26px; height: 26px; border: 1px solid #ddd; background-color: #fff;}
+.inputChkBox input:checked + label::before{content: '✔'; background-color: #004494; color: #fff; line-height: 1.4; border: 1px solid #004494; text-align: center;}
+
+@media (max-width: 1199px){
+
+  .inputTextBox input,
+  .textAreaBox textarea,
+  .inputChkBox label{font-size: 18px;}  
+
+}
+
+@media (max-width: 767px){
+
+  .inputChkBox label{padding-left: 30px;}
+  .inputChkBox label::before{top:0; width: 20px; height: 20px; line-height: 1.3;}
+  .inputChkBox label,
+  .inputTextBox input,
+  .textAreaBox textarea{font-size: 16px;}
+  .textAreaBox textarea{padding: 10px; height: 200px;}
+
+}
+
+@media (max-width: 480px){
+
+  .inputTextBox input{height: 45px;}
+  .textAreaBox textarea{height: 160px;}
+  .inputChkBox label::before{width: 18px; height: 18px; font-size: 14px;}
+
+}
+
+/* 공통 - 더보기 */
+.viewMore{position: relative; padding-left: 19px; display: flex; align-items: center; gap: 0 34px; width: 169px; height: 45px; line-height: 43px; border: 1px solid #ddd; font-size: 18px; color: #6c6868; z-index: 1;}
+.viewMore::after{content: ''; width: 8px; height: 9px; background: url(../images/main/arrow_icon02.png)no-repeat center;} 
+.viewMore::before{content: ''; position: absolute; top:0; left:0; bottom: 0; width: 0; transition: all .3s; background-color: #1b2c44; z-index: -1;}
+.viewMore:hover{color: #fff; border: 0;}
+.viewMore:hover::after{background: url(../images/main/arrow_icon03.png)no-repeat center;}
+.viewMore:hover:before{width: 100%; z-index: -1;}
+
+@media (max-width: 767px){
+
+  .viewMore{width: 160px; height: 40px; line-height: 40px; gap: 0 28px; font-size: 16px;}
+
+}
+
+@media (max-width: 480px){
+
+  .viewMore{width: 145px; gap: 0 25px; font-size: 14px;}
+
+}
+
+/* 비주얼영역 */
+#visualWrap{position: relative; margin-bottom: -78px;}
+#visualWrap .slide{position: relative; height: 984px;}
+#visualWrap .slide.active .imgBox img{transform: scale(1); transition: all 5s;}
+#visualWrap .slide.active .titleBox .view,
+#visualWrap .slide.active .titleBox h3{opacity: 1; transform: translateY(0); transition: all 2s;}
+#visualWrap .slide.active .titleBox .view{transition-delay: .3s;}
+#visualWrap .imgBox{position: absolute; top:0; left:0; right:0; bottom: 0;}
+#visualWrap .imgBox img{display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.5);}
+#visualWrap .titleBox{padding-top: 284px; position: relative;}
+#visualWrap .titleBox h3{opacity: 0; margin-bottom: 82px; color: #fff; font-size: 70px; font-weight: 700; line-height: 1.2; transform: translateY(50px);}
+#visualWrap .titleBox .view{opacity: 0; position: relative; padding-left: 40px; display: flex; align-items: center; gap: 0 72px; width: 288px; height: 68px; border: 2px solid #fff; border-radius: 10px; color: #fff; font-size: 20px; transform: translateY(50px); }
+#visualWrap .titleBox .view::after{content: ''; width: 57px; height: 13px; background: url(../images/main/arrow_icon01.png)no-repeat center; background-size: contain!important;}
+#visualWrap .slick-dots{position: absolute; left:50%; transform: translateX(-50%); bottom: 135px; display: flex!important; flex-wrap: wrap; gap: 5px 18px; align-items: center; justify-content: center;}
+#visualWrap .slick-dots li.slick-active button{background: #fff;}
+#visualWrap .slick-dots li button{width: 70px; height: 13px; text-indent: -9999px; background-color:rgba(255,255,255,.5); cursor: pointer;}
+#visualWrap .control button{width: 77px; height: 55px; position: absolute; top: 50%; transform: translateY(-50%);}
+#visualWrap .control .prev{left:54px; background: url(../images/main/slide_prev_icon.png)no-repeat center;}
+#visualWrap .control .next{right:54px; background: url(../images/main/slide_prev_icon.png)no-repeat center; transform: translateY(-50%) rotate(180deg);}
+
+@media (max-width: 1199px){
+
+  #visualWrap .slide{height: 100vh; overflow: hidden;}
+  #visualWrap .control{display: none;}
+  #visualWrap .titleBox{padding-top: 220px;}
+  #visualWrap .titleBox h3{margin-bottom: 55px; font-size: 45px;}
+  #visualWrap .titleBox .view{padding-left: 35px; gap: 0 53px; width: 260px; height: 60px; font-size: 18px;}
+  #visualWrap .titleBox .view::after{width: 47px; height: 13px;}
+  #visualWrap .slick-dots li button{width: 50px; height: 10px;}
+  #visualWrap .slick-dots{bottom: 100px;}
+  
+}
+
+@media (max-width: 767px){
+
+  #visualWrap .titleBox{padding-top: 180px;}
+  #visualWrap .titleBox h3{font-size: 36px;}
+  #visualWrap .titleBox .view{padding-left: 25px; gap: 0 35px; width: 210px; height: 50px; font-size: 16px;}
+  #visualWrap .titleBox .view::after{width: 37px;}
+  #visualWrap .slick-dots li button{width: 45px; height: 7px;}
+  
+}
+
+@media (max-width: 480px){
+
+  #visualWrap .titleBox{padding-top: 150px;}
+  #visualWrap .titleBox h3{margin-bottom: 40px; font-size: 26px;}
+  #visualWrap .titleBox .view{padding-left: 25px; gap: 0 30px; width: 190px;font-size: 14px;}
+  #visualWrap .titleBox .view::after{width: 30px;}
+  #visualWrap .slick-dots li button{width: 40px; height: 7px;}
+  
+}
+
+/* 더보기 영역 */
+#viewWrap .viewList{display: flex; justify-content: center;}
+#viewWrap .viewList li{flex: 1;}
+#viewWrap .viewList li a{position: relative; padding-top: 100px;  display: block; height: 174px; text-align: center; border-right: 1px solid #eee; background-color: #fff;}
+#viewWrap .viewList li a::before{content: '';position: absolute; left: 50%; transform: translateX(-50%); background-size: contain!important;}
+#viewWrap .viewList li:nth-child(1) a::before{top: 24px; width: 71px; height: 68px; background: url(../images/main/view_icon01.png)no-repeat center;}
+#viewWrap .viewList li:nth-child(2) a::before{top: 20px; width: 71px; height: 76px; background: url(../images/main/view_icon02.png)no-repeat center;}
+#viewWrap .viewList li:nth-child(3) a::before{top :23px; width: 71px; height: 74px; background: url(../images/main/view_icon03.png)no-repeat center;}
+#viewWrap .viewList li:nth-child(4) a::before{top: 27px; width: 88px; height: 71px; background: url(../images/main/view_icon04.png)no-repeat center;}
+#viewWrap .viewList li a h4{margin-bottom: 3px; text-align: center; font-size: 20px; color: #000;}
+#viewWrap .viewList li a .view{position: relative; margin: 0 auto; display: block; width: 105px; height: 25px; line-height: 25px; border: 1px solid #ddd; color: #000; z-index: 1;}
+#viewWrap .viewList li a .view::before{content: ''; position: absolute; top:0; left:0; bottom: 0; width: 0; background-color: #1b2c44; z-index: -1; transition: all .5s;}
+#viewWrap .viewList li a:hover .view::before{width: 100%;}
+#viewWrap .viewList li a:hover .view{color: #fff; border: 0;}
+
+@media (max-width: 1199px){
+
+  #viewWrap .viewList li a h4{font-size: 16px;}
+  #viewWrap .viewList li a .view{font-size: 15px;}
+
+  #viewWrap .viewList li a{padding-top: 94px;}
+  #viewWrap .viewList li:nth-child(1) a::before{width: 61px; height: 58px;}
+  #viewWrap .viewList li:nth-child(2) a::before{width: 61px; height: 66px;}
+  #viewWrap .viewList li:nth-child(3) a::before{width: 61px; height: 64px;}
+  #viewWrap .viewList li:nth-child(4) a::before{width: 78px; height: 61px;}
+
+}
+
+@media (max-width: 767px){
+
+  #viewWrap .viewList li a{height: 155px; padding-top: 84px;}
+  #viewWrap .viewList li:nth-child(1) a::before{width: 51px; height: 48px;}
+  #viewWrap .viewList li:nth-child(2) a::before{width: 51px; height: 56px;}
+  #viewWrap .viewList li:nth-child(3) a::before{width: 51px; height: 54px;}
+  #viewWrap .viewList li:nth-child(4) a::before{width: 68px; height: 51px;}
+
+}
+
+@media (max-width: 480px){
+
+  #viewWrap .viewList li a{height: 140px; padding-top: 70px;}
+  #viewWrap .viewList li:nth-child(1) a::before{width: 41px; height: 38px;}
+  #viewWrap .viewList li:nth-child(2) a::before{width: 41px; height: 46px;}
+  #viewWrap .viewList li:nth-child(3) a::before{width: 41px; height: 44px;}
+  #viewWrap .viewList li:nth-child(4) a::before{width: 58px; height: 41px;}
+  #viewWrap .viewList{flex-wrap: wrap; gap: 0;}
+  #viewWrap .viewList li{width: 50%; flex: none;}
+  #viewWrap .viewList li a h4{font-size: 14px;}
+  #viewWrap .viewList li a .view{font-size: 14px;}
+
+}
+
+/* 소개 영역 */
+#introduceWrap{padding: 47px 0 74px;}
+#introduceWrap .introduceBox{display: flex; align-items: center;}
+#introduceWrap .introduceBox .imgBox{width: 967px; height: 790px; overflow: hidden;}
+#introduceWrap .introduceBox .imgBox.active img{transform: scale(1);}
+#introduceWrap .introduceBox .imgBox img{display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.5); transition: all 7s;}
+#introduceWrap .introduceBox .textBox{position: relative; margin-left: -83px; width: 775px; height: 692px;  padding: 4.32vw 20px 0 6.56vw; z-index: 99; background-color: #fff;}
+#introduceWrap .introduceBox .textBox::after{content: ''; width: 350px; height: 310px; position: absolute; bottom: 0; right:0; background: url(../images/main/img01.png)no-repeat center; z-index: -1;}
+#introduceWrap .introduceBox .textBox h3{position: relative; padding-top: 13px; margin-bottom: 3.13vw; font-size: 35px; color: #1b2c44;}
+#introduceWrap .introduceBox .textBox h3::after{content: ''; position: absolute; top:0; left:0; width: 87px; height: 1px; background-color: #000;}
+#introduceWrap .introduceBox .textBox p{margin-bottom: 20px; font-size: 18px; color: #6c6868; line-height: 2; letter-spacing: -0.5px;}
+
+@media (max-width: 1199px){
+
+  #introduceWrap{padding: 47px 0 30px;}
+  #introduceWrap .introduceBox{flex-direction: column; gap: 20px 0;}
+  #introduceWrap .introduceBox .imgBox{display: none; width: 100%;}
+  #introduceWrap .introduceBox .textBox{padding: 100px 20px 90px; height: auto; margin: 0; position: relative; width: 100%;  z-index: 1;}
+  #introduceWrap .introduceBox .textBox::after{content: ''; position: absolute; top:0; left:0; right: 0; bottom: 0; width: 100%; height: 100%; background: url(../images/main/introduce_img01.jpg)no-repeat center top; background-size: cover; z-index: -2;}
+    #introduceWrap .introduceBox .textBox::before{content: ''; position: absolute; top:0; left:0; right:0; bottom: 0; background-color: rgba(0,0,0,.4); z-index: -1;}
+  #introduceWrap .viewMore,
+  #introduceWrap .introduceBox .textBox p,
+  #introduceWrap .introduceBox .textBox h3{color: #fff;}
+  #introduceWrap .introduceBox .textBox h3::after{width: 50px; background-color: #fff;}
+  #introduceWrap .introduceBox .textBox h3{margin-bottom: 20px; font-size: 30px;}
+
+}
+
+@media (max-width: 767px){
+
+  #introduceWrap .introduceBox .textBox h3::after{width: 40px;}
+  #introduceWrap .introduceBox .textBox h3{margin-bottom: 15px; font-size: 24px;} #introduceWrap .introduceBox .textBox p{font-size: 16px;}
+
+}
+
+@media (max-width: 480px){
+
+  #introduceWrap .introduceBox .textBox{padding: 50px 20px;}
+  #introduceWrap .introduceBox .textBox h3::after{width: 30px;}
+  #introduceWrap .introduceBox .textBox h3{font-size: 20px;} 
+  #introduceWrap .introduceBox .textBox p{font-size: 14px;}
+  #introduceWrap .introduceBox .textBox p br{display: none;}
+
+}
+
+/* 사업 영역 */
+#businessWrap{padding: 65px 0 180px;}
+#businessWrap .businessSlideBox{padding-bottom: 55px; overflow: hidden;}
+#businessWrap .businessSlideBox .titleBox::before{content: ''; width: 49px; height: 4px; position: absolute; top:0; left: 50%; transform: translateX(-50%); background-color: #1b2c44;}
+#businessWrap .businessSlideBox .titleBox{margin-bottom: 67px; position: relative; padding-top: 15px;}
+#businessWrap .businessSlideBox .titleBox span{display: block; text-align: center; font-size: 18px; color: #000;}
+#businessWrap .businessSlideBox .titleBox h3{text-align: center; font-weight: 700; font-size: 35px; color: #000;}
+/* #businessWrap .businessSlideBox .businessSlide .slick-list{margin: 0 -15px;} */
+#businessWrap .businessSlideBox .businessSlide .slick-list{overflow: visible;}
+#businessWrap .businessSlideBox .businessSlide{position: relative;}
+#businessWrap .businessSlideBox .businessSlide .slide{margin: 0 15px;}
+#businessWrap .businessSlideBox .businessSlide .box{display: block; transition: all .3s;}
+/* #businessWrap .businessSlideBox .businessSlide .box:hover{box-shadow: 0 5px 5px rgba(0,0,0,.2);} */
+#businessWrap .businessSlideBox .businessSlide .box:hover .imgBox .view{width: 139px; background-color: #ca391c;}
+#businessWrap .businessSlideBox .businessSlide .box:hover .imgBox .view::after{display: none;}
+#businessWrap .businessSlideBox .businessSlide .box:hover .imgBox .view em{opacity: 1; display: flex; align-items: center; visibility: visible; transition: all 1.7s;}
+#businessWrap .businessSlideBox .businessSlide .box .imgBox{position: relative; height: 344px;}
+#businessWrap .businessSlideBox .businessSlide .box .imgBox img{display: block; width: 100%; height: 100%; object-fit: cover;}
+#businessWrap .businessSlideBox .businessSlide .box .imgBox .view{display: flex; align-items: center; position: absolute; right:0; bottom: 0; width: 60px; height: 60px; background-color: #06519d; transition: all .3s;}
+#businessWrap .businessSlideBox .businessSlide .box .imgBox .view::after{content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: url(../images/main/arrow_icon01.png)no-repeat center; background-size: contain; width: 26px; height: 8px;} 
+#businessWrap .businessSlideBox .businessSlide .box .imgBox .view em{opacity: 0; align-items: center; gap: 0 9px; padding-left: 11px; color: #fff; visibility: hidden;}
+#businessWrap .businessSlideBox .businessSlide .box .imgBox .view em::after{content: ''; background: url(../images/main/arrow_icon01.png)no-repeat center; background-size: contain; width: 26px; height: 8px;}
+#businessWrap .businessSlideBox .businessSlide .box .textBox{padding-left: 38px; display: flex; align-items: center; height: 88px; border: 1px solid #ddd;}
+#businessWrap .businessSlideBox .businessSlide .box .textBox h4{position: relative; padding-left: 14px; font-weight: 700; font-size: 20px; color:#000;}
+#businessWrap .businessSlideBox .businessSlide .box .textBox h4::before{content: ''; position: absolute; top:7px; left:0; width: 3px; height: 15px; background-color: #1b2c44;}
+#businessWrap .businessSlideBox .businessSlide button{position: absolute; top:150px; width: 45px; height: 45px; background-color: #32373a;}
+#businessWrap .businessSlideBox .businessSlide button::before{content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);  width: 10px; height: 10px; border-right: 2px solid #fff; border-top: 2px solid #fff;}
+#businessWrap .businessSlideBox .businessSlide .prev{left:-55px;}
+#businessWrap .businessSlideBox .businessSlide .next{right:-55px;}
+#businessWrap .businessSlideBox .businessSlide .prev::before {transform: translate(-28%, -50%) rotate(-135deg);}
+#businessWrap .businessSlideBox .businessSlide .next::before {transform: translate(-78%, -50%) rotate(45deg);}
+#businessWrap .businessIntroduceBox .box{margin-bottom: 55px; display: flex; align-items: center;}
+#businessWrap .businessIntroduceBox .box:last-child{margin-bottom: 0;}
+#businessWrap .businessIntroduceBox .box .imgBox{height: 419px;}
+#businessWrap .businessIntroduceBox .box .imgBox img{display: block; width: 100%; height: 100%; object-fit: cover;}
+#businessWrap .businessIntroduceBox .box .textBox{margin-left: -54px; padding:55px 20px 24px 126px; width: 775px; background-color: #fff;}
+#businessWrap .businessIntroduceBox .box .textBox h3{position: relative; margin-bottom: 20px; padding-top: 10px; font-weight: 700; font-size: 35px; color: #000;}
+#businessWrap .businessIntroduceBox .box .textBox h3::after{content: ''; position: absolute; top:0; left:0; width: 126px; height: 1px; background-color: #000;}
+#businessWrap .businessIntroduceBox .box .textBox p{margin-bottom: 20px; font-size: 18px; color: #6c6868; line-height: 2;}
+#businessWrap .businessIntroduceBox .box:nth-child(even){flex-direction: row-reverse;}
+#businessWrap .businessIntroduceBox .box:nth-child(even) .textBox{padding: 79px 0 30px 0; width: 874px; margin-left: 0; margin-right: -54px; z-index: 99;}
+#businessWrap .businessIntroduceBox .box:nth-child(even) .textBox h3{padding-top: 15px; margin-bottom: 30px;}
+#businessWrap .businessIntroduceBox .box .textBox p{margin-bottom: 25px;}
+
+@media (max-width: 1199px){
+
+  #businessWrap{padding: 30px 0 180px;}
+  #businessWrap .businessSlideBox .titleBox{margin-bottom: 55px;}
+  #businessWrap .businessSlideBox .titleBox span{font-size: 16px;}
+  #businessWrap .businessSlideBox .titleBox h3{font-size: 30px;}
+  #businessWrap .businessSlideBox .titleBox::before{width: 35px; height: 3px;}
+  #businessWrap .businessSlideBox .businessSlide button{display: none!important;}
+  #businessWrap .businessSlideBox .businessSlide .box .imgBox .view{display: none!important;}
+
+  #businessWrap .businessIntroduceBox .box .textBox{padding: 55px 20px 55px 55px;}
+  #businessWrap .businessIntroduceBox .box .textBox h3{font-size: 28px;}
+  #businessWrap .businessIntroduceBox .box .textBox p{font-size: 16px;}
+  #businessWrap .businessIntroduceBox .box .textBox p br{display: none;}
+  #businessWrap .businessIntroduceBox .box .textBox h3::after{width: 100px;}
+  #businessWrap .businessIntroduceBox .box:nth-child(even) .textBox{padding: 79px 20px 30px 0}
+  
+}
+
+@media (max-width: 767px){
+
+  #businessWrap{padding: 30px 0 60px;}
+  #businessWrap .businessSlideBox .titleBox{margin-bottom: 50px;}
+  #businessWrap .businessSlideBox .titleBox h3{font-size: 26px;}
+  #businessWrap .businessSlideBox .titleBox::before{width: 30px; height: 2px;}
+  #businessWrap .businessSlideBox .businessSlide .box .textBox{padding-left: 20px; height: 75px;}
+  #businessWrap .businessSlideBox .businessSlide .slide{width: 400px;}
+  #businessWrap .businessSlideBox .businessSlide .box .imgBox{height: 300px;}
+
+  #businessWrap .businessIntroduceBox .box .imgBox{width: 100%; height: auto;}
+  #businessWrap .businessIntroduceBox .box .textBox{margin-left: 0; margin-right: 0!important; width: 100%!important; padding: 35px 0!important;}
+  #businessWrap .businessIntroduceBox .box .textBox h3::after{width: 60px;}
+  #businessWrap .businessIntroduceBox .box{flex-direction: column!important; gap: 10px 0;}
+  #businessWrap .businessIntroduceBox .box .textBox h3{font-size: 24px;margin-bottom: 20px!important;}
+
+}
+
+@media (max-width: 480px){
+
+  #businessWrap .businessSlideBox .titleBox{margin-bottom: 40px;}
+  #businessWrap .businessSlideBox .titleBox h3{font-size: 22px;}
+  #businessWrap .businessSlideBox .titleBox::before{width: 25px;}
+  #businessWrap .businessSlideBox .businessSlide .slide{width: 250px; margin: 0 10px;}
+  #businessWrap .businessSlideBox .businessSlide .box .imgBox{height: 200px;}
+  #businessWrap .businessSlideBox .businessSlide .box .textBox{height: 60px;}
+  #businessWrap .businessSlideBox .businessSlide .box .textBox h4{padding-left: 11px; font-size: 14px;}
+  #businessWrap .businessSlideBox .businessSlide .box .textBox h4::before{top: 5px; width: 2px; height: 10px;}
+
+  #businessWrap .businessIntroduceBox .box .textBox{padding: 20px 0 0!important;}
+  #businessWrap .businessIntroduceBox .box .textBox h3::after{width: 40px;}
+  #businessWrap .businessIntroduceBox .box .textBox h3{margin-bottom: 8px!important; font-size: 16px;}
+  #businessWrap .businessIntroduceBox .box .textBox p{margin-bottom: 13px; font-size: 14px;}
+  
+}
+
+/* 연혁 영역 */
+#historyWrap{padding: 0 0 96px;}
+#historyWrap .logoBox img{display: block;}
+#historyWrap .logoBox.animation {overflow: hidden;}
+#historyWrap .logoBox.animation .logoTrack{display: flex; gap: 0 75px; animation: scroll-left 30s linear infinite;
+}
+#historyWrap .logoBox.animation img {flex-shrink: 0;}
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); 
+    }
+}
+
+#historyWrap .historyBox{padding: 62px 0 20px; height: 444px; background: url(../images/main/history_bg.jpg)no-repeat center; background-size: cover;}
+#historyWrap .titleBox{margin-bottom: 35px; position: relative; padding-top: 30px;}
+#historyWrap .titleBox::before{content: ''; position: absolute; top:0; left: 50%; margin-left: -50px; width: 100px; height: 1px; background-color: #fff;}
+#historyWrap .titleBox span{margin-bottom: 8px; display: block; text-align: center; color: #fff; font-size: 18px;}
+#historyWrap .titleBox h3{font-weight: 700; color: #fff; font-size: 35px; text-align: center;}
+#historyWrap .historyList{display: flex;}
+#historyWrap .historyList li{flex: 1;}
+#historyWrap .historyList li strong{display: block; text-align: center; font-size: 60px; color: #fff;}
+#historyWrap .historyList li em{display: block; text-align: center; font-size: 25px; color: #fff; font-weight: 700;}
+
+@media (max-width: 1199px){
+
+  #historyWrap{padding: 0;}
+  #historyWrap .titleBox{padding-top: 26px;}
+  #historyWrap .titleBox::before{width: 84px; margin-left: -42px;}
+  #historyWrap .titleBox h3{font-size: 30px;}
+  #historyWrap .titleBox span{margin-bottom: 0; font-size: 16px;}
+  #historyWrap .historyBox{padding: 62px 0 90px; height: auto;}
+  #historyWrap .historyList{flex-wrap: wrap; gap: 70px 0;}
+  #historyWrap .historyList li{width: 50%; flex: none;}
+  #historyWrap .historyList li strong{font-size: 36px;}
+  #historyWrap .historyList li em{font-size: 22px;}
+  #historyWrap .logoBox img{width: 500px;}
+  #historyWrap .logoBox.animation .logoTrack{animation: scroll-left 15s linear infinite;}
+
+}
+
+@media (max-width: 767px){
+
+  #historyWrap .titleBox{padding-top: 20px;}
+  #historyWrap .titleBox::before{width: 70px; margin-left: -35px;}
+  #historyWrap .titleBox h3{font-size: 26px;}
+  #historyWrap .historyBox{padding: 62px 0 70px;}
+  #historyWrap .historyList li strong{font-size: 26px;}
+  #historyWrap .historyList li em{font-size: 20px;}
+  #historyWrap .logoBox img{width: 400px;}
+  #historyWrap .logoBox.animation .logoTrack{gap: 0 50px}
+
+}
+
+@media (max-width: 480px){
+
+  #historyWrap .titleBox{padding-top: 15px;}
+  #historyWrap .titleBox::before{width: 60px; margin-left: -30px;}
+  #historyWrap .titleBox h3{font-size: 22px;}
+  #historyWrap .historyBox{padding: 62px 0 55px;}
+  #historyWrap .historyList li strong{font-size: 18px;}
+  #historyWrap .historyList li em{font-size: 16px;}
+  #historyWrap .logoBox img{width: 250px;}
+  #historyWrap .logoBox.animation .logoTrack{gap: 0 35px}
+  #historyWrap .logoBox.animation .logoTrack{animation: scroll-left 10s linear infinite;}
+
+}
+
+@media (max-width: 414px){
+
+  #historyWrap .titleBox{margin-bottom: 50px;}
+  #historyWrap .historyList{gap: 50px 0;}
+  #historyWrap .historyList li{width: 100%;}
+
+}
+
+/* 상담영역 */
+#contactWrap .contactBox{display: flex;}
+#contactWrap .contactBox .imgBox img{display: block; width: 100%; height: 100%; object-fit: cover;}
+#contactWrap .contactBox .box{width: 720px; padding: 20px 0 20px 40px;}
+#contactWrap .contactBox .titleBox{margin-bottom: 26px;}
+#contactWrap .contactBox .titleBox span{display: block; margin-bottom: 18px; font-size: 17px; color: #000;}
+#contactWrap .contactBox .titleBox h3{font-size: 25px; font-weight: 700; color: #000;} 
+#contactWrap .contactBox .layoutBox{display: flex; align-items: center; gap: 0 23px;}
+#contactWrap .contactBox .inputTextWrap span{width: 150px; flex-shrink: 0; font-size: 20px; font-weight: 500; color: #000;}
+#contactWrap .contactBox .agreeInfoBox{margin-bottom: 20px;}
+#contactWrap .contactBox .agreeInfoBox p{margin-top: 5px; font-size: 20px; color: #000; text-align: right;} 
+#contactWrap .contactBox .agreeInfoBox .link{display: block; margin: 10px 0 15px; font-size: 20px; color: #000; text-align: right;}
+#contactWrap .contactBox .contactBtnBox{text-align: right;}
+#contactWrap .contactBox .contactBtnBox .contactBtn{width: 209px; height: 62px; background-color: #004494; text-align: center; font-size: 20px; color: #fff;}
+#contactWrap .contactBox .inputChkBox{text-align: right;}
+#contactWrap .contactBox .inputChkBox label{cursor: pointer;}
+
+@media (max-width: 1480px){
+
+  #contactWrap .contactBox .box{width: 950px;  padding: 20px 20px 20px 40px;}
+
+}
+
+@media (max-width: 1199px){
+
+  #contactWrap{position: relative; padding: 50px 20px 30px; background: url(../images/main/contact_bg.jpg)no-repeat center; background-size: cover; z-index: 1;}
+  #contactWrap::after{content: ''; position: absolute; top:0; left:0; right:0; bottom: 0; background-color: rgba(0,0,0,.1); z-index: -1;}
+  #contactWrap .contactBox .imgBox{display: none;}
+  #contactWrap .contactBox .box{padding: 0; width: 100%;}
+  #contactWrap .contactBox .titleBox{text-align: center;}
+  #contactWrap .contactBox .titleBox h3,
+  #contactWrap .contactBox .titleBox span{color: #fff;}
+  #contactWrap .contactBox .titleBox span{margin-bottom: 0;}
+  #contactWrap .contactBox .inputChkBox,
+  #contactWrap .contactBox .contactBtnBox,
+  #contactWrap .contactBox .agreeInfoBox .link,
+  #contactWrap .contactBox .agreeInfoBox p{text-align: center;}
+  #contactWrap .contactBox .agreeInfoBox .link,
+  #contactWrap .contactBox .inputChkBox label,
+  #contactWrap .contactBox .agreeInfoBox p,
+  #contactWrap .contactBox .inputTextWrap span{color: #fff;}
+  #contactWrap .contactBox .titleBox span{font-size: 16px;}
+  #contactWrap .contactBox .titleBox h3{font-size: 22px;}
+  #contactWrap .contactBox .contactBtnBox .contactBtn,
+  #contactWrap .contactBox .agreeInfoBox p,
+  #contactWrap .contactBox .agreeInfoBox .link,
+  #contactWrap .contactBox .inputTextWrap span{font-size: 18px;}
+  #contactWrap .contactBox .titleBox{margin-bottom: 46px;}
+  
+}
+
+@media (max-width: 767px){
+
+  #contactWrap .contactBox .titleBox h3{font-size: 20px;}
+  #contactWrap .contactBox .agreeInfoBox p,
+  #contactWrap .contactBox .agreeInfoBox .link{font-size: 16px;}
+  #contactWrap .contactBox .inputTextWrap span{width: 123px; font-size: 16px;}
+  #contactWrap .contactBox .contactBtnBox .contactBtn{font-size: 16px;}
+
+}
+
+@media (max-width: 480px){
+
+  #contactWrap .contactBox .layoutBox{flex-direction: column; gap: 10px 0;}
+  #contactWrap .contactBox .inputTextWrap span{width: 100%;;}
+  #contactWrap .contactBox .titleBox h3{font-size: 18px;}
+
+}

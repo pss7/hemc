@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+/* 공통 */
+#headerWrap{box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);}
+#wrap {display: flex; flex-direction: column; min-height: 100%;}
+#subWrap{flex: 1;}
+.contentBox{padding: 0 0 150px;}
+
+@media (max-width: 1199px){
+
+  #subWrap{margin-top: 80px;}
+
+}
+
+@media (max-width: 767px){
+
+  #subWrap{margin-top: 68px;}
+
+}
+
+@media (max-width: 480px){
+
+  #subWrap{margin-top: 50px;}
+
+}
+
+/* 공통 - 제목 */
+.titleBox{height: 318px; gap :20px 0; display: flex; flex-direction: column; align-items: center; justify-content: center;} 
+.titleBox h3{text-align: center; font-size: 35px; color: #000;}
+.titleBox span{text-align: center; font-size: 20px; color: #999;}
+
+@media (max-width: 1199px){
+
+  .titleBox{height: 280px;}
+  .titleBox h3{font-size: 28px;}
+  .titleBox span{font-size: 18px;}
+
+}
+
+@media (max-width: 767px){
+
+  .titleBox{height: 220px; gap: 15px 0;}
+  .titleBox h3{font-size: 24px;}
+  .titleBox span{font-size: 16px;}
+
+}
+
+@media (max-width: 480px){
+
+  .titleBox{height: 170px; gap: 10px 0;}
+  .titleBox h3{font-size: 20px;}
+  .titleBox span{font-size: 14px;}
+
+}
+
+/* 공통 - 서브 상단 */
+.subTopBox{position: relative; height: 379px; padding: 0 20px;}
+.subTopBox img{position: absolute; top:0; left:0; right: 0; bottom: 0; width: 100%; height: 100%; object-fit: cover;}
+.subTopBox .titleBox{position: relative; height: 100%; gap: 35px 0; flex-direction: column; display: flex; align-items: center; justify-content: center;}
+.subTopBox .titleBox h3{position: relative; color: #fff; font-weight: 900; font-size: 60px;}
+.subTopBox .titleBox h3::after{content: ''; width: 35px; height: 2px; position: absolute; bottom: -17px; left: 50%; margin-left: -17.5px; background-color: #fff;}
+.subTopBox .titleBox p{font-size: 30px; color: #fff; word-break: keep-all; text-align: center;} 
+
+@media (max-width: 1199px){
+
+  .subTopBox .titleBox h3{font-size: 50px;}
+  .subTopBox .titleBox h3::after{width: 30px; height: 1px; margin-left: -15px;}
+  .subTopBox .titleBox p{font-size: 24px;}
+  .subTopBox{height: 350px;}
+
+}
+
+@media (max-width: 767px){
+
+  .subTopBox .titleBox h3{font-size: 40px;}
+  .subTopBox .titleBox h3::after{width: 20px; margin-left: -10px;}
+  .subTopBox .titleBox p{font-size: 18px;}
+  .subTopBox{height: 320px;}
+
+}
+
+@media (max-width: 480px){
+
+  .subTopBox .titleBox h3{font-size: 24px;}
+  .subTopBox .titleBox h3::after{width: 15px; margin-left: -7.5px;}
+  .subTopBox .titleBox p{font-size: 16px;}
+  .subTopBox{height: 270px;}
+
+}
+
+/* 브레드크럼 */
+.breadcrumbBox{display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #ddd;}
+.breadcrumbBox .home{ width: 57px; height: 84px; border-right: 1px solid #ddd; background: url(../images/sub/home_icon.png)no-repeat center; }
+.breadcrumbBox .depthBox{width: 184px; position: relative;}
+.breadcrumbBox .depthBox:last-child > a{font-weight: 700;}
+.breadcrumbBox .depthBox > a{position: relative; display: flex; align-items: center; height: 84px; padding-left: 43px; font-size: 20px; color: #000; border-right: 1px solid #ddd; line-height: 1;}
+.breadcrumbBox .depthBox > a.active::after{transform: translateY(-50%) rotate(-180deg);}
+.breadcrumbBox .depthBox > a::after{content: ''; position: absolute; top: 50%; transform: translateY(-45%); right:17px; width: 11px; height: 11px; background: url(../images/sub/arrow_icon01.png)no-repeat center; background-size: contain; transition: all .3s;}
+.breadcrumbBox .depthBox .depth{display: none; padding: 10px 0; position: absolute; top: 95px; left:0; right:0; background-color: #1b2c44; border-radius: 10px; z-index: 999;}
+.breadcrumbBox .depthBox .depth li a{display: block; font-size: 18px; padding: 10px 0 10px 43px; color: #fff;}
+.breadcrumbBox .depthBox .depth li a:hover{font-weight: 700;}
+
+@media (max-width: 1199px){
+
+  .breadcrumbBox .home,
+  .breadcrumbBox .depthBox > a{height: 60px;}
+  .breadcrumbBox .depthBox > a{padding-left: 25px; font-size: 18px;}
+
+}
+
+@media (max-width: 767px){
+
+  .breadcrumbBox .home,
+  .breadcrumbBox .depthBox > a{height: 50px;}
+  .breadcrumbBox .depthBox > a{padding-left: 20px; font-size: 16px;}
+ 
+}
+
+@media (max-width: 480px){
+
+  .breadcrumbBox{justify-content: flex-start;}
+  .breadcrumbBox .home{display: none;}
+  .breadcrumbBox .home,
+  .breadcrumbBox .depthBox > a{height: 50px;}
+  .breadcrumbBox .depthBox > a{padding-left: 10px; font-size: 14px;}
+  .breadcrumbBox .depthBox{width: 50%;}
+  .breadcrumbBox .depthBox > a::after{width: 8px; height: 8px;}
+
+}
+
+/* 인사말 */
+.greetingBox .layoutBox{display: flex; align-items: flex-start; justify-content: center; gap: 0 65px;}
+.greetingBox .title::before{content: ''; position: absolute; left:0; top:0; width: 30px; height: 1px; background-color: #1b2c44;}
+.greetingBox .title{padding-top: 13px; position: relative; display: block; margin-bottom: 15px; font-size: 25px; color: #1b2c44; font-weight: 700;}
+.greetingBox p{font-size: 20px; color: #555}
+.greetingBox p strong{color: #f56231;}
+.greetingBox p .ceo{display: block; font-size: 23px; color: #000;}
+.greetingBox .imgBox{box-shadow: -5px 8px 10px rgba(203, 210, 218, 1);}
+.greetingBox .imgBox img{display: block; width: 100%;}
+
+
+@media (max-width: 1199px){
+
+  .greetingBox .layoutBox{gap: 60px 0; flex-direction: column-reverse; align-items: center;}
+  .greetingBox .title{font-size: 22px;}
+  .greetingBox .title::before{width: 25px;}
+  .greetingBox p{width: 100%; font-size: 18px;}
+  .greetingBox p .ceo{font-size: 20px;}
+
+}
+
+@media (max-width: 767px){
+
+  .greetingBox .title{font-size: 18px;}
+  .greetingBox p{font-size: 16px;}
+  .greetingBox p .ceo{font-size: 18px;}
+
+}
+
+@media (max-width: 480px){
+
+  .greetingBox .layoutBox{gap: 40px 0;}
+  .greetingBox .title::before{width: 20px;}
+  .greetingBox .title{font-size: 16px;}
+  .greetingBox p{font-size: 14px;}
+  .greetingBox p .ceo{margin-top: 20px; font-size: 16px;}
+  .greetingBox p br{display: none;}
+
+}
