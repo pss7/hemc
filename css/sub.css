@@ -615,15 +615,16 @@
 /* 조직도 */
 .organizationChartBox .imgBox{height: 603px; margin-bottom: 62px;}
 .organizationChartBox .imgBox img{display: block; width: 100%; height: 100%; object-fit: cover;}
+.organizationChartBox .organizationChartList{padding: 0 123px;}
 .organizationChartBox .organizationChartList li .box{margin-bottom: 25px;}
 .organizationChartBox .organizationChartList li .box01{margin-bottom: 77px;}
 .organizationChartBox .organizationChartList li .box span{position: relative; top: 32px; display: block; margin: 0 auto; width: 207px; height: 64px; line-height: 64px; text-align: center; color: #fff; border-radius: 50px; font-size: 30px; font-weight: 700;}
 .organizationChartBox .organizationChartList li .box01 span{ background-color: #f56231;}
 .organizationChartBox .organizationChartList li .box02 span{ background-color: #1b2c44;}
 .organizationChartBox .organizationChartList li .box .team + em{padding-top: 13px;}
-.organizationChartBox .organizationChartList li .box em{display: block; font-size: 25px; color: #000; max-width: 255px; margin: 0 auto; height: 108px; line-height: 108px; border-radius: 5px; text-align: center; border: 2px solid #ddd; background-color: #fff;}
-.organizationChartBox .organizationChartList li .organizationChartList02{position: relative; display: flex; justify-content: center; gap: 0 155px;}
-.organizationChartBox .organizationChartList li .organizationChartList02 li{position: relative;}
+.organizationChartBox .organizationChartList li .box em{display: block; font-size: 25px; color: #000; max-width: 255px; width: 100%; margin: 0 auto; height: 108px; line-height: 108px; border-radius: 5px; text-align: center; border: 2px solid #ddd; background-color: #fff;}
+.organizationChartBox .organizationChartList li .organizationChartList02{position: relative; display: flex; justify-content: center;}
+.organizationChartBox .organizationChartList li .organizationChartList02 li{width: 100%; position: relative;}
 .organizationChartBox .organizationChartList li .organizationChartList02 li::after{content: ''; position: absolute; top:-24px; left: 50%; margin-left: -0.5px; width: 1px; height: 56px; background-color: #ccc;}
 .organizationChartBox .organizationChartList li .organizationChartList02::before{content: ''; position: absolute; left: 50%;
     transform: translateX(-50%); top: -24px; width:55%; height: 1px; background-color: #ccc;}
@@ -633,9 +634,9 @@
 .organizationChartBox .organizationChartList li .organizationChartList02 li:last-child:before {content: '';  position: absolute; top: -24px;
     right: 50%; width: 50%; height: 1px; background-color: #ccc;}
 
-    
 @media (max-width: 1199px){
 
+  .organizationChartBox .organizationChartList{padding: 0;}
   .organizationChartBox .imgBox{height: 450px;}
   .organizationChartBox .organizationChartList li .organizationChartList02 li::after{height: 47px;}
   .organizationChartBox .organizationChartList li .box span{top:22.5px; width: 140px; height: 45px; line-height: 45px; font-size: 18px;}
