@@ -27,10 +27,15 @@
 
 }
 
+/* 공통 - 색상 */
+.subColor{color: #1b2c44;}
+.subColor{color: #f56231;}
+
 /* 공통 - 이미지 확대 보기 */
 .imgZoomBox img{display: block; max-width: 100%; margin: 0 auto; z-index: 1;}
 .imgZoomBox{position: relative;}
 .imgZoomBox .zoomView{display: none; position: absolute; bottom: 30px; right: 30px; width: 42px; height: 42px; background: url(../images/common/zoom_view.png) no-repeat; background-size: contain!important;}
+.imgZoomBox .zoomView02{background:url(../images/common/zoom_view02.png) no-repeat center;}
 
 @media (max-width: 767px){
 
@@ -68,6 +73,7 @@
   .titleBox h3{font-size: 24px;}
   .titleBox span{font-size: 16px;}
   .tit{font-size: 18px;}
+  .tit::before{width: 20px;}
 
 }
 
@@ -395,7 +401,7 @@
 .hemcBox .table tr td{padding:14px 10px 14px 20px; color: #000; font-size: 20px;}
 .hemcBox .table tr th,
 .hemcBox .table tr td{border: 1px solid #ccc;}
-.hemcBox .imgBox{display: flex; justify-content: center; flex-direction: column; gap: 28px 0;}
+.hemcBox .imgBox{display: flex; flex-direction: column; justify-content: center; margin-top: 105px; gap: 28px 0;}
 .hemcBox .imgBox img{display: block; width: 100%;}
 
 @media (max-width: 1199px){
@@ -407,7 +413,8 @@
 
   .hemcBox .table tr td{padding: 12px 10px 12px 14px;}
   .hemcBox .table tr th{padding: 12px 10px;}
-  
+  .hemcBox .imgBox{margin-top: 0;}
+
 }
 
 @media (max-width: 480px){
@@ -550,3 +557,132 @@
   .directionsBox .mapBox .mapInfoList li img{width: 120px;}
 
 }
+
+/* ci */
+.ciBox .topTextBox{margin-bottom: 50px;}
+.ciBox .topTextBox .title{margin-bottom: 20px; font-weight: 500; color: #000; font-size: 25px;}
+.ciBox .topTextBox .title strong{color: #f56231;}
+.ciBox .topTextBox .text{font-size: 20px; color: #555; line-height: 1.7;}
+.ciBox .topTextBox .text strong{color: #f56231;}
+.ciBox .imgZoomBox{margin-bottom: 100px;}
+.ciBox .imgZoomBox .zoomView{bottom: 0;}
+.ciBox .downloadBtn{display: flex; align-items: center; justify-content: center; gap: 0 15px; width: 201px; height: 53px; margin: 0 auto; border-radius: 5px; text-align: center; color: #fff; font-size: 25px; color: #fff; background-color: #1b2c44;}
+.ciBox .downloadBtn::before{content: ''; width: 19px; height: 18px; background: url(../images/sub/download_icon02.png)no-repeat;}
+.ciBox .ciColorBox{margin-top: 55px;}
+.ciBox .ciColorBox span{margin-bottom: 13px; display: block; font-size: 20px; font-weight: 700; color: #000;}
+.ciBox .ciColorBox .box em{display: block; height: 37px; line-height: 37px; text-align: center; font-weight: 700; color: #fff; font-size: 20px;}
+.ciBox .ciColorBox .box01{background-color: #1b2c44;}
+.ciBox .ciColorBox .box02{background-color: #f56231;}
+.ciBox .ciColorBox p{padding: 10px 10px 36px 12px; border: 1px solid #ddd; font-size: 20px; color: #010101; background-color: #fff; letter-spacing: -1px;}
+.ciBox .ciColorBox .layoutBox{display: flex; gap: 0 20px;}
+.ciBox .colorBox{width: 220px;}
+
+@media (max-width: 1199px){
+
+  .ciBox .topTextBox{margin-bottom: 25px;}
+  .ciBox .imgZoomBox{margin-bottom: 50px;}
+  .ciBox .downloadBtn{width: 170px; font-size: 18px;}
+  .ciBox .topTextBox .title{margin-bottom: 10px; font-size: 20px;}
+  .ciBox .topTextBox .text{font-size: 16px;}
+  .ciBox .ciColorBox p,
+  .ciBox .ciColorBox .box em,
+  .ciBox .ciColorBox span{font-size: 18px;}
+
+}
+
+@media (max-width: 767px){
+
+  .ciBox .ciColorBox p{padding: 10px 20px 20px;}
+  .ciBox .topTextBox .title{font-size: 18px;}
+  .ciBox .topTextBox .text br{display: none;}
+  .ciBox .ciColorBox p,
+  .ciBox .ciColorBox .box em,
+  .ciBox .ciColorBox span{font-size: 16px;}
+
+}
+
+@media (max-width: 480px){
+
+  .ciBox .topTextBox .title{font-size: 16px;}
+  .ciBox .topTextBox .text{font-size: 14px;}
+  .ciBox .downloadBtn{width: 155px; font-size: 16px;}
+
+  .ciBox .ciColorBox .layoutBox{flex-direction: column; gap:30px 0;}
+  .ciBox .colorBox{width: 100%;}
+
+}
+
+/* 조직도 */
+.organizationChartBox .imgBox{height: 603px; margin-bottom: 62px;}
+.organizationChartBox .imgBox img{display: block; width: 100%; height: 100%; object-fit: cover;}
+.organizationChartBox .organizationChartList li .box{margin-bottom: 25px;}
+.organizationChartBox .organizationChartList li .box01{margin-bottom: 77px;}
+.organizationChartBox .organizationChartList li .box span{position: relative; top: 32px; display: block; margin: 0 auto; width: 207px; height: 64px; line-height: 64px; text-align: center; color: #fff; border-radius: 50px; font-size: 30px; font-weight: 700;}
+.organizationChartBox .organizationChartList li .box01 span{ background-color: #f56231;}
+.organizationChartBox .organizationChartList li .box02 span{ background-color: #1b2c44;}
+.organizationChartBox .organizationChartList li .box .team + em{padding-top: 13px;}
+.organizationChartBox .organizationChartList li .box em{display: block; font-size: 25px; color: #000; max-width: 255px; margin: 0 auto; height: 108px; line-height: 108px; border-radius: 5px; text-align: center; border: 2px solid #ddd; background-color: #fff;}
+.organizationChartBox .organizationChartList li .organizationChartList02{position: relative; display: flex; justify-content: center; gap: 0 155px;}
+.organizationChartBox .organizationChartList li .organizationChartList02 li{position: relative;}
+.organizationChartBox .organizationChartList li .organizationChartList02 li::after{content: ''; position: absolute; top:-24px; left: 50%; margin-left: -0.5px; width: 1px; height: 56px; background-color: #ccc;}
+.organizationChartBox .organizationChartList li .organizationChartList02::before{content: ''; position: absolute; left: 50%;
+    transform: translateX(-50%); top: -24px; width:55%; height: 1px; background-color: #ccc;}
+.organizationChartBox .organizationChartList li .organizationChartList02 li:nth-child(2)::after{height: 109px; top: -77px}
+.organizationChartBox .organizationChartList li .organizationChartList02 li:first-child:before {content: '';  position: absolute; top: -24px;
+    left: 50%; width: 50%; height: 1px; background-color: #ccc;}
+.organizationChartBox .organizationChartList li .organizationChartList02 li:last-child:before {content: '';  position: absolute; top: -24px;
+    right: 50%; width: 50%; height: 1px; background-color: #ccc;}
+
+    
+@media (max-width: 1199px){
+
+  .organizationChartBox .imgBox{height: 450px;}
+  .organizationChartBox .organizationChartList li .organizationChartList02 li::after{height: 47px;}
+  .organizationChartBox .organizationChartList li .box span{top:22.5px; width: 140px; height: 45px; line-height: 45px; font-size: 18px;}
+  .organizationChartBox .organizationChartList li .box em{height: 80px; line-height: 80px; font-size: 18px;}
+  .organizationChartBox .organizationChartList li .organizationChartList02{gap: 0 2%; justify-content: space-between;}
+  .organizationChartBox .organizationChartList li .organizationChartList02 li{width: 33.33%;}
+  .organizationChartBox .organizationChartList li .organizationChartList02 li:nth-child(2)::after{height: 100px;}
+  .organizationChartBox .organizationChartList li .box .team + em{padding-top: 10px;}
+
+}
+
+@media (max-width: 767px){
+
+  .organizationChartBox .organizationChartList li .box{margin-bottom: 10px;}
+  .organizationChartBox .imgBox{margin-bottom: 30px; height: 350px;}
+  .organizationChartBox .organizationChartList li .box .team + em,
+  .organizationChartBox .organizationChartList li .box span{font-size: 16px;}
+  .organizationChartBox .organizationChartList li .box em{max-width: 200px; height: 70px; line-height: 70px; font-size: 16px;}
+
+  .organizationChartBox .organizationChartList li .organizationChartList02 li:nth-child(2)::after{top: -10px; height: 33px;}
+  .organizationChartBox .organizationChartList li .organizationChartList02::before{top: 6px;}
+  .organizationChartBox .organizationChartList li .organizationChartList02 li::after{top: 7px; height: 16px;}
+  .organizationChartBox .organizationChartList li .organizationChartList02 li:last-child:before,
+  .organizationChartBox .organizationChartList li .organizationChartList02 li:first-child:before{top: 6px;}
+  
+}
+
+@media (max-width: 576px){
+
+  .organizationChartBox .organizationChartList li .box span{width: 120px;}
+
+}
+
+@media (max-width: 480px){
+
+  .organizationChartBox .imgBox{height: 275px;}
+  .organizationChartBox .organizationChartList li .box span{width: 100%; border-radius: 5px 5px 0 0;}
+  .organizationChartBox .organizationChartList li .organizationChartList02{flex-direction: column; gap: 0;}
+  .organizationChartBox .organizationChartList li .organizationChartList02 li{width: 100%;}
+  .organizationChartBox .organizationChartList li .organizationChartList02 li:last-child:before,
+  .organizationChartBox .organizationChartList li .organizationChartList02 li::after,
+  .organizationChartBox .organizationChartList li .organizationChartList02::before,
+  .organizationChartBox .organizationChartList li .organizationChartList02 li:first-child:before{display: none;}
+  .organizationChartBox .organizationChartList li .box em{max-width: none;}
+  .organizationChartBox .organizationChartList li .box span{top: auto;}
+  .organizationChartBox .organizationChartList li .box .team + em{padding: 0;}
+  .organizationChartBox .organizationChartList li .box em{height: 50px; line-height: 50px; border-radius: 0 0 5px 5px;}
+
+}
+
