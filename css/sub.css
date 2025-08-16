@@ -16,25 +16,27 @@
 @media (max-width: 767px){
 
   #subWrap{margin-top: 68px;}
-  .contentWrap{padding: 0 0 50px;}
 
 }
 
 @media (max-width: 480px){
 
   #subWrap{margin-top: 50px;}
-  .contentWrap{padding: 0 0 30px;}
 
 }
+
+
+/* 공통 - 정렬 */
+.text-left{text-align: left!important;}
 
 /* 공통 - 색상 */
 .subColor{color: #1b2c44;}
 .subColor{color: #f56231;}
 
 /* 공통 - 이미지 확대 보기 */
-.imgZoomBox img{display: block; max-width: 100%; margin: 0 auto; z-index: 1;}
+.imgZoomBox img{display: block; max-width: 100%; margin: 0 auto;}
 .imgZoomBox{position: relative;}
-.imgZoomBox .zoomView{display: none; position: absolute; bottom: 30px; right: 30px; width: 42px; height: 42px; background: url(../images/common/zoom_view.png) no-repeat; background-size: contain!important;}
+.imgZoomBox .zoomView{display: none; position: absolute; bottom: -35px; right: 0; width: 42px; height: 42px; background: url(../images/common/zoom_view.png) no-repeat; background-size: contain!important;}
 .imgZoomBox .zoomView02{background:url(../images/common/zoom_view02.png) no-repeat center;}
 
 @media (max-width: 767px){
@@ -45,7 +47,7 @@
 
 @media (max-width: 480px){
 
-  .imgZoomBox .zoomView{width: 36px; height: 36px; bottom: 10px; right: 10px;}
+  .imgZoomBox .zoomView{width: 36px; height: 36px;}
 
 }
 
@@ -687,3 +689,143 @@
 
 }
 
+/* 장비 */
+.equipmentsBox .tit{margin-bottom: 10px; font-weight: 700;}
+.equipmentsBox .imgInfoBox{margin-bottom: 55px;}
+.equipmentsBox .imgInfoBox .layoutBox{gap: 0 60px; display: flex; align-items: flex-start; justify-content: space-between;}
+.equipmentsBox .imgInfoBox .textBox .box{margin-bottom: 35px;}
+.equipmentsBox .imgInfoBox .textBox .box .infoBox{margin-top: 15px; display: flex; align-items: center; gap: 0 15px}
+.equipmentsBox .imgInfoBox .textBox .box .infoBox span{font-size: 20px;}
+.equipmentsBox .equipmentsList li,
+.equipmentsBox .equipmentsText{font-size: 20px; color: #504d4d; line-height: 1.7;}
+.equipmentsBox .imgInfoBox .imgBox{border-radius: 8px; overflow: hidden; box-shadow: 0 8px 10px rgba(203, 210, 218, 1);}
+.equipmentsBox .imgInfoBox .imgBox img{display: block; width: 100%; height: 100%; object-fit: cover;}
+.equipmentsBox .equipmentsImgBox{margin-bottom: 75px;}
+.equipmentsBox .equipmentsImgList{max-width: 1062px; display: flex; justify-content: space-between; }
+.equipmentsBox .equipmentsImgList li .imgBox{width: 137px; height: 176px; margin: 0 auto 22px; border-radius: 5px; overflow: hidden; box-shadow: 0 8px 15px rgba(203, 210, 218, 1);}
+.equipmentsBox .equipmentsImgList li .imgBox img{display: block; width: 100%; height: 100%; object-fit: cover;}
+.equipmentsBox .equipmentsImgList li span{display: block; text-align: center; font-size: 20px; color: #504d4d;}
+.equipmentsBox .tit02{margin: 10px 0; padding-left: 6px; font-size: 20px; color: #000; border-left: 2px solid #f56231; line-height: 1;}
+.equipmentsBox .equipmentsInfoBox{margin-bottom: 40px;}
+.equipmentsBox .equipmentsInfoBox .imgZoomBox{margin-top: 30px;}
+.equipmentsBox .equipmentsInfoBox .imgZoomBox .zoomView{bottom:-30px; right: 0;}
+.equipmentsBox .equipmentsInfoBox .imgZoomBox img{margin: 0;}
+.equipmentsBox .equipmentsTableBox{margin: 35px 0;}
+.equipmentsBox .equipmentsTable{width: 100%;}
+.equipmentsBox .equipmentsTable{border-top: 3px solid #1b2c44; background-color: #efefef;}
+.equipmentsBox .equipmentsTable thead th{padding: 10px; font-size: 20px; color: #000; font-weight: 500; text-align: center; border: 1px solid #ccc; border-width: 1px 1px 0 0; word-break: keep-all;}
+.equipmentsBox .equipmentsTable tbody td{padding: 10px; font-weight: 500; font-size: 20px; color: #000; text-align: center; background-color: #fff; border: 1px solid #ccc; border-width: 1px 1px 1px 0; word-break: keep-all;}
+.equipmentsBox .equipmentsTable tbody td span{display: block; line-height: 2.5;}
+.equipmentsBox .equipmentsTable .color{color: #cc1616;}
+.equipmentsBox .imgListBox{margin-top: 100px;}
+.equipmentsBox .imgListBox .imgList{display: flex; align-items: flex-start; justify-content: space-between; gap: 0 100px;} 
+.equipmentsBox .imgListBox .tit02{margin-bottom: 50px;}
+
+@media (max-width: 1199px){
+
+  .equipmentsBox .equipmentsImgList li span,
+  .equipmentsBox .equipmentsList li,
+  .equipmentsBox .equipmentsText{font-size: 16px;}
+  .equipmentsBox .equipmentsImgList{max-width: none;}
+  .equipmentsBox .equipmentsTable thead th,
+  .equipmentsBox .equipmentsTable tbody td{font-size: 16px;}
+  .equipmentsBox .tit02{font-size: 18px;}
+
+}
+
+@media (max-width: 1024px){
+
+  .equipmentsBox .imgInfoBox .imgBox{width: 100%; margin-bottom: 35px;}
+  .equipmentsBox .imgInfoBox .layoutBox{flex-direction: column-reverse;}
+  .equipmentsBox .equipmentsText br{display: none;}
+  .equipmentsBox .equipmentsImgList{flex-wrap: wrap; gap: 50px 0; justify-content: flex-start;}
+  .equipmentsBox .equipmentsImgList li{width: 33.33%;}
+  .equipmentsBox .imgInfoBox .textBox .box{margin-bottom: 20px;}
+  .equipmentsBox .imgListBox{margin-top: 50px;}
+
+}
+
+@media (max-width: 767px){
+
+  .equipmentsBox .equipmentsTableBox{margin: 20px 0;}
+  .equipmentsBox .tit02{font-size: 16px;}
+  .equipmentsBox .imgListBox .imgList{flex-direction: column; gap: 60px 0;}
+  .equipmentsBox .imgListBox .imgList li{width: 100%;}
+
+}
+
+@media (max-width: 576px){
+
+  .equipmentsBox .equipmentsTableBox{overflow-x: auto; overflow-y: hidden;}
+  .equipmentsBox .equipmentsTable{white-space: nowrap;}
+
+}
+
+@media (max-width: 480px){
+
+  .equipmentsBox .imgInfoBox{margin-bottom: 30px;}
+  .equipmentsBox .equipmentsImgList li span,
+  .equipmentsBox .equipmentsList li,
+  .equipmentsBox .equipmentsText{font-size: 14px;}
+  .equipmentsBox .equipmentsTable thead th,
+  .equipmentsBox .equipmentsTable tbody td{font-size: 14px;}
+  .equipmentsBox .equipmentsImgList li{width: 50%;}
+
+}
+
+@media (max-width: 360px){
+
+  .equipmentsBox .equipmentsImgList{gap: 30px 0;}
+  .equipmentsBox .equipmentsImgList li{width: 100%;}
+
+}
+
+/* 연혁 */
+.historyBox .historyList{display: flex; flex-direction: column; align-items: center; position: relative;}
+.historyBox .historyList::after{content: ''; position: absolute; margin-left: -2px; left: 50%; top:18px; bottom: 515px; width: 4px; background-color: #ddd; }
+.historyBox .historyList > li{position: relative; width: 50%;}
+.historyBox .historyList li .year{display: block; font-size: 35px; color: #000; font-weight: 700;}
+.historyBox .historyList li .list{margin-bottom: 25px;}
+.historyBox .historyList li .list li{margin-bottom: 5px; font-size: 20px; color: #000}
+.historyBox .historyList > li:nth-child(odd){padding-right: 20px; align-self: flex-start; text-align: right;}
+.historyBox .historyList > li:nth-child(odd)::after{content: ''; width: 8px; height: 8px; position: absolute; top:18px; right:-4px; background-color: #0963b0; border-radius: 50%; z-index: 9;}
+.historyBox .historyList > li:nth-child(odd) .imgBox{text-align: right;}
+.historyBox .historyList > li:nth-child(odd) .imgBox img{display: inline-block;}
+.historyBox .historyList > li:nth-child(even){padding-left: 20px; align-self: flex-end; text-align: left;}
+.historyBox .historyList > li:nth-child(even)::after{content: ''; width: 8px; height: 8px; position: absolute; top:18px; left:-4px; background-color: #0963b0; border-radius: 50%; z-index: 9;}
+.historyBox .imgBox img{display: block; max-width: 100%;}
+
+@media (max-width: 1199px){
+
+  .historyBox .historyList li .year{font-size: 28px;}
+  .historyBox .historyList li .list li{font-size: 16px;}
+  .historyBox .historyList::after{width: 2px;}
+
+  .historyBox .historyList > li:nth-child(odd)::after{right: -3px;}
+  .historyBox .historyList > li:nth-child(even)::after{left: -5px;}
+
+}
+
+@media (max-width: 767px){
+
+  .historyBox .historyList li .year{font-size: 22px;}
+  .historyBox .historyList li .list li{font-size: 16px;}
+
+}
+
+@media (max-width: 480px){
+
+  .historyBox .historyList li .year{margin-bottom: 10px; padding: 6px 10px 4px; font-size: 14px; border-radius: 5px;}
+  .historyBox .historyList li .list li{font-size: 14px;}
+  .historyBox .historyList{gap: 40px 0;}
+  .historyBox .historyList > li{padding: 0!important; width: 100%; text-align: center!important;}
+  .historyBox .historyList li .list{margin-bottom: 10px;}
+  .historyBox .imgBox img{display: block!important;}
+  .historyBox .historyList::after,
+  .historyBox .historyList > li::after{display: none;}
+  .historyBox .historyList li .year{background-color: #1b2c44; color: #fff;}
+
+  .historyBox .historyList li .list li{display: flex; justify-content: center; gap: 0 6px;}
+  .historyBox .historyList li .list li::before{content: '-';}
+
+}
