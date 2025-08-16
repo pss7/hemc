@@ -27,16 +27,38 @@
 
 }
 
+/* 공통 - 이미지 확대 보기 */
+.imgZoomBox img{display: block; max-width: 100%; margin: 0 auto; z-index: 1;}
+.imgZoomBox{position: relative;}
+.imgZoomBox .zoomView{display: none; position: absolute; bottom: 30px; right: 30px; width: 42px; height: 42px; background: url(../images/common/zoom_view.png) no-repeat; background-size: contain!important;}
+
+@media (max-width: 767px){
+
+  .imgZoomBox .zoomView{display: block;}
+
+}
+
+@media (max-width: 480px){
+
+  .imgZoomBox .zoomView{width: 36px; height: 36px; bottom: 10px; right: 10px;}
+
+}
+
 /* 공통 - 제목 */
 .titleBox{height: 318px; gap :20px 0; display: flex; flex-direction: column; align-items: center; justify-content: center;} 
 .titleBox h3{text-align: center; font-size: 35px; color: #000;}
 .titleBox span{text-align: center; font-size: 20px; color: #999;}
+.tit{position: relative; padding-top: 12px; margin: 22px 0; font-weight: 500; color: #000; font-size: 25px;}
+.tit::before{content: ''; position: absolute; top:0; left:0; width: 44px; height: 2px; background-color: #1b2c44;}
 
 @media (max-width: 1199px){
 
   .titleBox{height: 280px;}
   .titleBox h3{font-size: 28px;}
   .titleBox span{font-size: 18px;}
+
+  .tit{margin: 15px 0; padding-top: 8px; font-size: 20px;}
+  .tit::before{width: 25px; height: 1px;}
 
 }
 
@@ -45,6 +67,7 @@
   .titleBox{height: 220px; gap: 15px 0;}
   .titleBox h3{font-size: 24px;}
   .titleBox span{font-size: 16px;}
+  .tit{font-size: 18px;}
 
 }
 
@@ -53,6 +76,8 @@
   .titleBox{height: 170px; gap: 10px 0;}
   .titleBox h3{font-size: 20px;}
   .titleBox span{font-size: 14px;}
+  .tit{font-size: 16px;}
+
 
 }
 
@@ -177,20 +202,7 @@
 }
 
 /* social */
-.socialBox .infoText{padding: 0 0 35px; font-size: 20px; color: #555; line-height: 1.7;}
-.socialBox .topImgBox{margin-bottom: 42px; background: url(../images/sub/social_bg02.jpg) no-repeat center; background-size: cover;}
-
-@media (max-width: 1199px){
-
-  .socialBox .infoText{font-size: 16px;}
-
-}
-
-@media (max-width: 767px){
-
-  .socialBox .infoText br{display: none;}
-
-}
+.socialBox .topImgBox{background: url(../images/sub/social_bg02.jpg) no-repeat center; background-size: cover;}
 
 @media (max-width: 480px){
 
@@ -205,7 +217,7 @@
 }
 
 /* 공통 - 콘텐츠 상단 이미지 박스 */
-.topImgBox{display: flex; align-items: center; height: 850px; }
+.topImgBox{margin-bottom: 42px; display: flex; align-items: center; height: 850px; }
 .topImgBox .topText{padding: 40px 26px; font-size: 40px; font-weight: 700; color: #fff; line-height: 1.7; background-color: rgba(0,0,0,.5); text-align: center;}
 .topImgBox .topText strong{color: #4ce8df;}
 
@@ -230,6 +242,16 @@
   .topImgBox .topText{font-size: 16px;}
 
 }
+
+/* 공통 - 상단 텍스트 */
+.infoTopText{padding: 0 0 35px; font-size: 20px; color: #555; line-height: 1.7;}
+
+@media (max-width: 1199px){
+
+  .infoTopText{font-size: 16px;}
+
+}
+
 
 /* 공통 - 텍스트 */
 .comTextBox .box h4{font-size: 35px; color: #000;}
@@ -295,7 +317,7 @@
 }
 
 /* environmental */
-.environmentalBox .topImgBox{margin-bottom: 42px; background: url(../images/sub/environmental_bg02.jpg) no-repeat center; background-size: cover;}
+.environmentalBox .topImgBox{background: url(../images/sub/environmental_bg02.jpg) no-repeat center; background-size: cover;}
 .environmentalBox .comTextBox .box .text{padding-bottom: 70px;}
 .environmentalBox .box .infoTextBox .infoBox .txt{margin-bottom: 45px;}
 
@@ -307,13 +329,224 @@
 }
 
 /* 경영이념 */
-.philosophyBox{padding: 0 20px; height: 1090px; background: url(../images/sub/philosophy_bg02.jpg)no-repeat center; background-size: cover; z-index: -1;}
-.philosophyBox .imgBox img{display: block; width: 100%; margin: 0 auto; z-index: 1;}
-.philosophyBox .imgBox{position: relative;}
-.philosophyBox .imgBox .zoomView{display: none; position: absolute; bottom: 30px; right: 30px; width: 42px; height: 42px; background: url(../images/common/zoom_view.png) no-repeat; background-size: 42px 42px;}
+.philosophyBox{padding: 3px 20px; background: url(../images/sub/philosophy_bg02.jpg)no-repeat center; background-size: cover; z-index: -1;}
+
+/* governance */
+.governanceBox .topImgBox{background: url(../images/sub/governance_bg.jpg)no-repeat center;}
+.governanceBox .governanceTopText .imgZoomBox{margin: 47px 0 0;}
+.governanceBox .governanceTopText{margin-bottom: 90px;}
+.governanceBox .governanceTopText .imgZoomBox .zoomView{background: url(../images/common/zoom_view02.png)no-repeat center;}
+.governanceBox .governanceTextBox{margin-bottom: 48px; padding: 65px 0 120px; background-color: #fafafa;}
+.governanceBox .governanceTextBox h3{margin-bottom: 20px; font-size: 35px; color: #000;}
+.governanceBox .governanceTextBox .text{margin-bottom: 60px; font-size: 20px; color: #555454; line-height: 1.6;}
+.governanceBox .governanceTextBox h4{margin-bottom: 83px; font-size: 35px; color: #000; font-weight: 500;}
+.governanceBox .governanceTextBox .governanceList{display: flex; gap: 38px 2%; flex-wrap: wrap;}
+.governanceBox .governanceTextBox .governanceList li{width: 23.44%; border: 1px solid #1b2c44;}
+.governanceBox .governanceTextBox .governanceList li span{display: block; height: 77px; line-height: 77px; text-align: center; color: #fff; font-weight: 700; font-size: 20px; background-color: #1b2c44;}
+.governanceBox .governanceTextBox .governanceList li p{display: flex; justify-content: center; align-items: center; height: 157px; text-align: center; font-size: 20px; color: #555454; background-color: #fff;}
 
 @media (max-width: 1199px){
 
-  .philosophyBox .imgBox .zoomView{display: block;}
+  .governanceBox .governanceTextBox{padding: 65px 0;}
+  .governanceBox .governanceTopText .imgZoomBox{margin: 30px 0 80px;}
+  .governanceBox .governanceTopText{margin-bottom: 50px;}
+  .governanceBox .governanceTextBox .text{font-size: 16px;}
+  .governanceBox .governanceTextBox h3,
+  .governanceBox .governanceTextBox h4{margin-bottom: 20px; font-size: 26px;}
+  .governanceBox .governanceTextBox .governanceList li p{height: 110px;}
+  .governanceBox .governanceTextBox .governanceList li p,
+  .governanceBox .governanceTextBox .governanceList li span{font-size: 16px;}
+ 
+}
+
+@media (max-width: 1024px){
+
+  .governanceBox .governanceTextBox .governanceList{gap: 20px 2%}
+  .governanceBox .governanceTextBox .governanceList li{width: 32%;}
+
+}
+
+@media (max-width: 767px){
+
+  .governanceBox .governanceTopText .imgZoomBox{margin: 0 0 50px;}
+  .governanceBox .governanceTopText .imgZoomBox .zoomView{bottom: -30px; right:10px;}
+  .governanceBox .governanceTextBox .text{margin-bottom: 35px;}
+  .governanceBox .governanceTextBox h3,
+  .governanceBox .governanceTextBox h4{margin-bottom: 15px; font-size: 22px;}
+  .governanceBox .governanceTextBox .governanceList li p{height: 96px;}
+  .governanceBox .governanceTextBox .governanceList li span{height: 55px; line-height: 55px;}
+
+}
+
+@media (max-width: 576px){
+
+  .governanceBox .governanceTextBox{padding: 50px 0;}
+  .governanceBox .governanceTextBox h3,
+  .governanceBox .governanceTextBox h4{margin-bottom: 10px; font-size: 18px;}
+  .governanceBox .governanceTextBox .governanceList li{width: 100%;}
+
+}
+
+/* 기업정보 */
+.hemcBox .layoutBox{display: flex; gap: 0 40px;}
+.hemcBox .tableBox{width: 679px;}
+.hemcBox .table{width: 100%; border-top: 3px solid #1b2c44;}
+.hemcBox .table tr th{padding: 14px 10px; background-color: #1b2c44; text-align: center; color: #fff; font-weight: 600; font-size: 20px;}
+.hemcBox .table tr td{padding:14px 10px 14px 20px; color: #000; font-size: 20px;}
+.hemcBox .table tr th,
+.hemcBox .table tr td{border: 1px solid #ccc;}
+.hemcBox .imgBox{display: flex; justify-content: center; flex-direction: column; gap: 28px 0;}
+.hemcBox .imgBox img{display: block; width: 100%;}
+
+@media (max-width: 1199px){
+  
+  .hemcBox .layoutBox{flex-direction: column-reverse; gap: 30px 0;}
+  .hemcBox .tableBox{width: 100%;}
+  .hemcBox .table tr th,
+  .hemcBox .table tr td{font-size: 16px;}
+
+  .hemcBox .table tr td{padding: 12px 10px 12px 14px;}
+  .hemcBox .table tr th{padding: 12px 10px;}
+  
+}
+
+@media (max-width: 480px){
+  
+  .hemcBox .imgBox{gap: 15px 0;}
+  .hemcBox .table tr th,
+  .hemcBox .table tr td{font-size: 14px;}
+
+  .hemcBox .table tr td{padding: 10px 10px 10px 14px;}
+  .hemcBox .table tr th{padding: 10px;}
+
+}
+
+/* ESG 경영 */
+.esgBox .imgInfoTextBox{margin-bottom: 80px;}
+.esgBox .imgInfoTextBox .imgBox{box-shadow: 0 8px 10px rgba(203, 210, 218, 1);}
+.esgBox .imgInfoTextBox .imgBox img{display: block; width: 100%; height: 100%; object-fit: cover;}
+.esgBox .imgInfoTextBox .layoutBox{display: flex; justify-content: center; align-items: center;}
+.esgBox .imgInfoTextBox .textBox{width: 836px; margin-left: -136px; padding: 130px 20px 100px 58px; background-color: #fff;}
+.esgBox .imgInfoTextBox .textBox .title{margin-bottom: 60px; font-weight: 700; font-size: 25px; color: #000;}
+.esgBox .imgInfoTextBox .textBox .title strong{color: #f56231;}
+.esgBox .imgInfoTextBox .textBox .text{font-size: 20px; color: #555;}
+.esgBox .esgImgBox{margin-bottom: 120px;}
+.esgBox .esgImgBox img{display: block; width: 100%;}
+.esgBox .esgListBox{margin-bottom: 78px;}
+.esgBox .esgListBox .tit{margin-bottom: 50px; padding-top: 3px; text-align: center; font-size: 35px; font-weight: 500;}
+.esgBox .esgListBox .tit::before{ left: 50%; margin-left: -12.5px;}
+.esgBox .esgList{display: flex; flex-wrap: wrap; gap: 53px 4%;}
+.esgBox .esgList li{width: 48%; display: flex; gap: 0 14px;}
+.esgBox .esgList li span{flex-shrink: 0; display: block; width: 56px; height: 56px; line-height: 56px; border-radius: 8px; background-color: #1b2c44; font-weight: 500; color: #fff; font-size: 20px; text-align: center;}
+.esgBox .esgList li p{margin-top: 12px; font-size: 30px; font-weight: 700; color: #000; line-height: 1.2; word-break: keep-all;}
+.esgBox .downloadBtn{margin: 0 auto; display: flex; gap: 0 20px; align-items: center; justify-content: center; width: 219px; height: 60px; line-height: 60px; text-align: center; border-radius: 7px; background-color: #f56231; color: #fff; font-size: 25px; font-weight: 500;} 
+.esgBox .downloadBtn::after{content: ''; width: 16px; height: 17px; background: url(../images/sub/download_icon.png)no-repeat center;}
+
+@media (max-width: 1199px){
+
+  .esgBox .imgInfoTextBox .textBox .title{font-size: 20px;}
+  .esgBox .imgInfoTextBox .textBox .text{font-size: 18px;}
+  .esgBox .imgInfoTextBox .textBox .title{margin-bottom: 40px;}
+  .esgBox .imgInfoTextBox .textBox{padding: 50px 20px 50px 70px;}
+
+  .esgBox .esgListBox .tit{font-size: 30px;}
+  .esgBox .esgList li span{width: 45px; height: 45px; line-height: 45px; font-size: 18px;}
+  .esgBox .esgList li p{font-size: 24px;}
+  .esgBox .downloadBtn{font-size: 20px; width: 190px;}
+
+}
+
+@media (max-width: 1024px){
+
+  .esgBox .imgInfoTextBox .imgBox{display: none; width: 100%;}
+  .esgBox .imgInfoTextBox .textBox{position: relative; margin: 0; width: 100%; padding: 80px 20px 65px; z-index: 1;}
+  .esgBox .imgInfoTextBox .textBox::after{content: ''; position: absolute; top:0; left:0; right:0; bottom: 0; background: url(../images/sub/esg_img01.jpg)no-repeat center; background-size: cover; z-index: -2;}
+  .esgBox .imgInfoTextBox .textBox::before{content: ''; position: absolute; top:0; left:0; right:0; bottom: 0; background-color: rgba(0,0,0,.25); z-index: -1;}
+
+  .esgBox .imgInfoTextBox .textBox .text,
+  .esgBox .imgInfoTextBox .textBox .title{color: #fff;}
+
+}
+
+@media (max-width: 767px){
+
+  .esgBox .imgInfoTextBox .textBox .title{font-size: 18px;}
+  .esgBox .imgInfoTextBox .textBox .text{font-size: 16px;}
+  
+  .esgBox .esgListBox .tit{font-size: 26px;}
+  .esgBox .esgList li{flex-direction: column; align-items: center;}
+  .esgBox .esgList li span{width: 100%; height: 35px; line-height: 35px; font-size: 16px; border-radius: 5px;}
+  .esgBox .esgList li p{font-size: 18px; word-break: normal;}
+  .esgBox .downloadBtn{font-size: 18px; width: 150px; height: 50px; line-height: 50px;}
+
+  .esgBox .imgInfoTextBox{margin-bottom: 0;}
+  .esgBox .esgImgBox{margin-bottom: 50px;}
+
+}
+
+@media (max-width: 480px){
+
+  .esgBox .imgInfoTextBox .textBox{padding: 60px 20px 45px;}
+  .esgBox .imgInfoTextBox .textBox .title{margin-bottom: 30px; font-size: 16px;}
+  .esgBox .imgInfoTextBox .textBox .text{font-size: 14px;}
+
+  .esgBox .esgList{gap: 30px 0;}
+  .esgBox .esgListBox{margin-bottom: 30px;}
+  .esgBox .esgListBox .tit{margin-bottom: 30px; font-size: 20px;}
+  .esgBox .esgList li{width: 100%;}
+  .esgBox .esgList li span{font-size: 14px;}
+  .esgBox .esgList li p{font-size: 16px; line-height: 1.5;}
+  .esgBox .downloadBtn{font-size: 16px;}
+
+}
+
+/* 오시는 길 */
+.directionsBox .mapBox{margin-bottom: 70px; display: flex; flex-direction: column; gap: 30px 0;}
+.directionsBox .mapBox .map{height: 495px;}
+.directionsBox .mapBox .map img{display: block; width: 100%; height: 100%; object-fit: cover;}
+.directionsBox .mapBox .mapInfoList{padding: 17px 0; height: 233px; display: flex; background-color: #fff; box-shadow: 0 0 20px rgba(203, 210, 218, 1); border-radius: 5px;}
+.directionsBox .mapBox .mapInfoList li{display: flex; flex-direction: column; justify-content: flex-start; height: 100%; padding: 0 20px; flex: auto; border-right: 1px solid #ccc;}
+.directionsBox .mapBox .mapInfoList li img{display: block; width: 177px; margin: 0 auto;}
+.directionsBox .mapBox .mapInfoList li:last-child{border-right: 0;}
+.directionsBox .mapBox .mapInfoList li em{display: block; font-size: 18px; color: #010101; text-align: center;}
+.directionsBox .mapBox .mapInfoList li .icon{position: relative; margin: 0 auto 30px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center}
+.directionsBox .mapBox .mapInfoList li .icon::after{content: ''; background-size: contain!important;}
+.directionsBox .mapBox .mapInfoList li:nth-child(1){justify-content: center;}
+.directionsBox .mapBox .mapInfoList li:nth-child(2) .icon::after{width: 37px; height: 43px; background: url(../images/sub/phone_icon.png)no-repeat center;}
+.directionsBox .mapBox .mapInfoList li:nth-child(3) .icon::after{width: 40px; height: 37px; background: url(../images/sub/phone_icon02.png)no-repeat center;}
+.directionsBox .mapBox .mapInfoList li:nth-child(4) .icon::after{width: 37px; height: 26px; background: url(../images/sub/email_icon.png)no-repeat center;}
+.directionsBox .mapBox .mapInfoList li:nth-child(5) .icon::after{width: 33px; height: 40px; background: url(../images/sub/address_icon.png)no-repeat center;}
+.directionsBox .mapBox .mapInfoList li:nth-child(6) .icon::after{width: 41px; height: 41px; background: url(../images/sub/link_icon.png)no-repeat center;}
+.directionsBox .mapBox .mapInfoList li .linkBox a{display: block;}
+
+@media (max-width: 1199px){
+
+  .directionsBox .mapBox .mapInfoList{flex-direction: column; gap:0; height: auto;}
+  .directionsBox .mapBox .mapInfoList li{padding: 30px 0; border: 0;}
+  .directionsBox .mapBox .mapInfoList li:nth-child(even){background-color: #fbfbfb;}
+  .directionsBox .mapBox .map{height: 450px;}
+  .directionsBox .mapBox .mapInfoList li .icon{margin: 0 auto 15px;}
+
+}
+
+@media (max-width: 767px){
+
+  .directionsBox .mapBox .map{height: 400px;}
+  .directionsBox .mapBox .mapInfoList{padding: 0;}
+  .directionsBox .mapBox .mapInfoList li{padding: 20px;}
+  .directionsBox .mapBox .mapInfoList li em{font-size: 16px;}
+  .directionsBox .mapBox .mapInfoList li .icon{margin: 0 auto 10px;}
+  .directionsBox .mapBox .mapInfoList li:nth-child(2) .icon::after{width: 27px; height: 33px;}
+  .directionsBox .mapBox .mapInfoList li:nth-child(3) .icon::after{width: 30px; height: 27px;}
+  .directionsBox .mapBox .mapInfoList li:nth-child(4) .icon::after{width: 27px; height: 16px;}
+  .directionsBox .mapBox .mapInfoList li:nth-child(5) .icon::after{width: 23px; height: 30px;}
+  .directionsBox .mapBox .mapInfoList li:nth-child(6) .icon::after{width: 31px; height: 31px;}
+
+}
+
+@media (max-width: 480px){
+
+  .directionsBox .mapBox .map{height: 300px;}
+  .directionsBox .mapBox .mapInfoList li img{width: 120px;}
 
 }
