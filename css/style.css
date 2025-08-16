@@ -35,6 +35,22 @@
 #headerWrap .headerBottomWrap .sitemapBtn{position: relative; display: block; width: 80px; background-color: #1b2c44;}
 #headerWrap .headerTopWrap .mobileMenuBtn::after,
 #headerWrap .headerBottomWrap .sitemapBtn::after{width: 49px; height: 32px; content: ''; position: absolute; top: 50%; left:50%; transform: translate(-50%, -50%); background: url(../images/common/menu_icon.png)no-repeat center; background-size: contain!important;}
+#headerWrap .sitemapBox{display: none; position: fixed; top:0; left:0; right: 0; bottom: 0; z-index: 999; background-color: #fff; background: linear-gradient(200deg, #4f94c4, #27476b, #1b2c44);}
+#headerWrap .sitemapBox .sitemapList{gap: 0 80px; display: flex; justify-content: center; border-bottom: 1px solid rgba(255,255,255, .4);}
+#headerWrap .sitemapBox .sitemapList li{position: relative;}
+#headerWrap .sitemapBox .sitemapList li::before{content: ''; position: absolute; left:0; bottom: 0; width: 0; height: 3px; transition: all .3s; background-color: #4f94c4;}
+#headerWrap .sitemapBox .sitemapList li h2 a{display: block; padding: 30px 25px; color: #fff; font-size: 23px; text-align: center; transition: all .3s;}
+#headerWrap .sitemapBox .sitemapList li:hover::before{width: 100%;}
+#headerWrap .sitemapBox .sitemapList li:hover h2 a{color: #4f94c4;}
+#headerWrap .sitemapBox .sitemapLogoBox{text-align: center;}
+#headerWrap .sitemapBox .sitemapLogoBox h1 a{display: inline-block; padding: 50px 0 30px;}
+#headerWrap .sitemapBox .sitemapLogoBox h1 a img{display: block; margin: 0 auto;}
+#headerWrap .sitemapBox .closeBtn{position: absolute; top: 20px; right: 30px; width: 50px;  height: 50px; background-color: #1b2c44; border-radius: 50%;}
+#headerWrap .sitemapBox .closeBtn::before,
+#headerWrap .sitemapBox .closeBtn::after{content:""; position:absolute; top: 50%;
+  left: 50%; width: 20px; height: 2px; background:#fff;border-radius: 5px;}
+#headerWrap .sitemapBox .closeBtn::before{transform: translate(-50%, -50%) rotate(45deg);}
+#headerWrap .sitemapBox .closeBtn::after{transform: translate(-50%, -50%) rotate(-45deg);}
 
 @media (max-width: 1580px){
 
@@ -48,11 +64,14 @@
 @media (max-width: 1280px){
 
   #headerWrap .headerBottomWrap .menu li a{padding: 31px 55px;}
+  
+  #headerWrap .sitemapBox .sitemapList li h2 a{padding: 20px; font-size: 22px;}
 
 }
 
 @media (max-width: 1199px){
 
+  #headerWrap .sitemapBox{display: none;}
   #headerWrap{position: fixed; top:0; left:0; right:0;}
   #headerWrap .headerBottomWrap{display: none;}
   #headerWrap .headerTopWrap{padding-left: 20px; border-bottom: 0;}

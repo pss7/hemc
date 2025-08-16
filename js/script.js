@@ -17,5 +17,12 @@ $(function () {
     return false;
   });
 
+  //사이트맵
+  $('#headerWrap .sitemapBtn').click(function(){
+    $('.sitemapBox').fadeIn();
+  })
+    $('#headerWrap .sitemapBox .closeBtn').click(function(){
+    $('.sitemapBox').fadeOut();
+  })
 
 });
