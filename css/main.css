@@ -78,7 +78,7 @@
 #visualWrap .slick-dots li button{width: 70px; height: 13px; text-indent: -9999px; background-color:rgba(255,255,255,.5); cursor: pointer;}
 #visualWrap .control button{width: 77px; height: 55px; position: absolute; top: 50%; transform: translateY(-50%);}
 #visualWrap .control .prev{left:54px; background: url(../images/main/slide_prev_icon.png)no-repeat center;}
-#visualWrap .control .next{right:54px; background: url(../images/main/slide_prev_icon.png)no-repeat center; transform: translateY(-50%) rotate(180deg);}
+#visualWrap .control .next{right:54px; background: url(../images/main/slide_prev_icon.png)no-repeat center; transform: translateY(-50%) rotateY(180deg);}
 
 @media (max-width: 1199px){
 
@@ -179,6 +179,7 @@
 
 @media (max-width: 1199px){
 
+  #introduceWrap .viewMore::after{background: url(../images/main/arrow_icon03.png) no-repeat center!important;}
   #introduceWrap{padding: 47px 0 30px;}
   #introduceWrap .introduceBox{flex-direction: column; gap: 20px 0;}
   #introduceWrap .introduceBox .imgBox{display: none; width: 100%;}
@@ -211,14 +212,15 @@
 }
 
 /* 사업 영역 */
-#businessWrap{padding: 65px 0 180px;}
-#businessWrap .businessSlideBox{padding-bottom: 55px; overflow: hidden;}
+#businessWrap{position: relative; padding: 65px 0 180px;}
+/* #businessWrap::before{content: ''; width: 13%; position: absolute; top:0; left:0; bottom: 0; background-color: #fff; z-index: 1;} */
+#businessWrap .businessSlideBox{padding-bottom: 55px; }
 #businessWrap .businessSlideBox .titleBox::before{content: ''; width: 49px; height: 4px; position: absolute; top:0; left: 50%; transform: translateX(-50%); background-color: #1b2c44;}
 #businessWrap .businessSlideBox .titleBox{margin-bottom: 67px; position: relative; padding-top: 15px;}
 #businessWrap .businessSlideBox .titleBox span{display: block; text-align: center; font-size: 18px; color: #000;}
 #businessWrap .businessSlideBox .titleBox h3{text-align: center; font-weight: 700; font-size: 35px; color: #000;}
 /* #businessWrap .businessSlideBox .businessSlide .slick-list{margin: 0 -15px;} */
-#businessWrap .businessSlideBox .businessSlide .slick-list{overflow: visible;}
+/* #businessWrap .businessSlideBox .businessSlide .slick-list{overflow: visible;} */
 #businessWrap .businessSlideBox .businessSlide{position: relative;}
 #businessWrap .businessSlideBox .businessSlide .slide{margin: 0 15px;}
 #businessWrap .businessSlideBox .businessSlide .box{display: block; transition: all .3s;}
@@ -235,8 +237,9 @@
 #businessWrap .businessSlideBox .businessSlide .box .textBox{padding-left: 38px; display: flex; align-items: center; height: 88px; border: 1px solid #ddd;}
 #businessWrap .businessSlideBox .businessSlide .box .textBox h4{position: relative; padding-left: 14px; font-weight: 700; font-size: 20px; color:#000;}
 #businessWrap .businessSlideBox .businessSlide .box .textBox h4::before{content: ''; position: absolute; top:7px; left:0; width: 3px; height: 15px; background-color: #1b2c44;}
-#businessWrap .businessSlideBox .businessSlide button{position: absolute; top:150px; width: 45px; height: 45px; background-color: #32373a;}
+#businessWrap .businessSlideBox .businessSlide button{position: absolute; top:50%; width: 45px; height: 45px; transform: translateY(-50%); background-color: #32373a;}
 #businessWrap .businessSlideBox .businessSlide button::before{content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);  width: 10px; height: 10px; border-right: 2px solid #fff; border-top: 2px solid #fff;}
+#businessWrap .businessSlideBox .businessSlide button{z-index: 9999;}
 #businessWrap .businessSlideBox .businessSlide .prev{left:-55px;}
 #businessWrap .businessSlideBox .businessSlide .next{right:-55px;}
 #businessWrap .businessSlideBox .businessSlide .prev::before {transform: translate(-28%, -50%) rotate(-135deg);}
@@ -257,11 +260,13 @@
 @media (max-width: 1199px){
 
   #businessWrap{padding: 30px 0 180px;}
-  #businessWrap .businessSlideBox .titleBox{margin-bottom: 55px;}
+  #businessWrap .businessSlideBox .titleBox{margin-bottom: 73px;}
   #businessWrap .businessSlideBox .titleBox span{font-size: 16px;}
   #businessWrap .businessSlideBox .titleBox h3{font-size: 30px;}
   #businessWrap .businessSlideBox .titleBox::before{width: 35px; height: 3px;}
-  #businessWrap .businessSlideBox .businessSlide button{display: none!important;}
+  #businessWrap .businessSlideBox .businessSlide .controlBox{display: flex; gap: 0 5px; position: absolute; top:-54px; left:0;}
+  #businessWrap .businessSlideBox .businessSlide button{position: relative; top: auto; transform: none; left: auto!important; right: auto!important;}
+  
   #businessWrap .businessSlideBox .businessSlide .box .imgBox .view{display: none!important;}
 
   #businessWrap .businessIntroduceBox .box .textBox{padding: 55px 20px 55px 55px;}
@@ -293,7 +298,10 @@
 
 @media (max-width: 480px){
 
-  #businessWrap .businessSlideBox .titleBox{margin-bottom: 40px;}
+  #businessWrap .businessSlideBox .businessSlide button::before{width: 6px; height: 6px;}
+  #businessWrap .businessSlideBox .businessSlide .controlBox{top: -39px}
+  #businessWrap .businessSlideBox .businessSlide button{width: 30px; height: 30px;}
+  #businessWrap .businessSlideBox .titleBox{margin-bottom: 70px;}
   #businessWrap .businessSlideBox .titleBox h3{font-size: 22px;}
   #businessWrap .businessSlideBox .titleBox::before{width: 25px;}
   #businessWrap .businessSlideBox .businessSlide .slide{width: 250px; margin: 0 10px;}

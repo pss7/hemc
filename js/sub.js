@@ -1,8 +1,8 @@
 
 $(function () {
 
+  /* 서브 메뉴 */
   $('.breadcrumbBox .depthBox > a').click(function(){
-
 
     if($(this).hasClass('active')){
       $(this).removeClass('active');

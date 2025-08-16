@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+/* 공통 - 상단으로 이동 */
+#top{display: none; position: fixed; right: 50px; bottom: 30px; width: 79px; height: 78px; border-radius: 50%; background: url(../images/common/top.png)no-repeat center; z-index: 99999; box-shadow: 0 4px 15px rgba(0, 0, 0, .3);}
+
 /* 공통 - 여백 */
 .mt-20{margin-top: 20px!important;}
 .mb-20{margin-bottom: 20px!important;}
