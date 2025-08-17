@@ -152,7 +152,7 @@
 .breadcrumbBox .depthBox > a.active::after{transform: translateY(-50%) rotate(-180deg);}
 .breadcrumbBox .depthBox > a::after{content: ''; position: absolute; top: 50%; transform: translateY(-45%); right:17px; width: 11px; height: 11px; background: url(../images/sub/arrow_icon01.png)no-repeat center; background-size: contain; transition: all .3s;}
 .breadcrumbBox .depthBox .depth{display: none; padding: 10px 0; position: absolute; top: 95px; left:0; right:0; background-color: #1b2c44; border-radius: 10px; z-index: 999;}
-.breadcrumbBox .depthBox .depth li a{display: block; font-size: 18px; padding: 10px 0 10px 43px; color: #fff;}
+.breadcrumbBox .depthBox .depth li a{display: block; font-size: 18px; padding: 10px 20px 10px 43px; color: #fff; word-break: keep-all;}
 .breadcrumbBox .depthBox .depth li a:hover{font-weight: 700;}
 
 @media (max-width: 1199px){
