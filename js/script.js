@@ -56,4 +56,8 @@ $(function () {
     });
   });
 
+  $('#headerWrap .mobileMenuBox').click(function (e) {
+    e.stopPropagation();
+  });
+
 });
