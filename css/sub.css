@@ -52,17 +52,28 @@
 }
 
 /* 공통 - 제목 */
-.titleBox{height: 318px; gap :20px 0; display: flex; flex-direction: column; align-items: center; justify-content: center;} 
+.titleBox{display: flex; justify-content: center;}
+.titleBox .box{position: relative; height: 318px; display: flex; flex-direction: column; align-items: center; justify-content: center;  gap :20px 0; padding: 0 227px; overflow: hidden;  background-color: #fff;} 
+
 .titleBox h3{text-align: center; font-size: 35px; color: #000;}
-.titleBox span{text-align: center; font-size: 20px; color: #999;}
+.titleBox .box span{position: relative; display: block; padding: 0 60px; text-align: center; font-size: 20px; color: #999; background-color: #fff; z-index: 99; z-index: 1; word-break: keep-all;}
+.titleBox .box span::after{content: ''; position: absolute; top:0; left:0; right:0; bottom: 0; background-color: #fff; z-index: -1;}
+.titleBox .box span::before{content: ''; position: absolute; top: 50%; margin-top: -0.5px; left:-100%; right: -100%; height: 1px; background-color: #ddd; z-index: -2;}
 .tit{position: relative; padding-top: 12px; margin: 22px 0; font-weight: 500; color: #000; font-size: 25px;}
 .tit::before{content: ''; position: absolute; top:0; left:0; width: 44px; height: 2px; background-color: #1b2c44;}
 
 @media (max-width: 1199px){
 
-  .titleBox{height: 280px;}
+
   .titleBox h3{font-size: 28px;}
-  .titleBox span{font-size: 18px;}
+
+  .titleBox .box{height: 280px; padding: 0 100px;}
+  .titleBox .box span{padding: 0; font-size: 18px;}
+  .titleBox .box span::after,
+  .titleBox .box span::before{display: none;}
+
+  .contentWrap .titleBox{position: relative;}
+  .contentWrap .titleBox::before{content: ''; position: absolute; top: 50%; transform: translateY(-50%); left: 0; right:0; height: 1px; background-color: #ddd;}
 
   .tit{margin: 15px 0; padding-top: 8px; font-size: 20px;}
   .tit::before{width: 25px; height: 1px;}
@@ -71,9 +82,11 @@
 
 @media (max-width: 767px){
 
-  .titleBox{height: 220px; gap: 15px 0;}
+  .titleBox .box{height: 220px; gap: 15px 0;}
+  .titleBox .box span{font-size: 16px;}
+
   .titleBox h3{font-size: 24px;}
-  .titleBox span{font-size: 16px;}
+
   .tit{font-size: 18px;}
   .tit::before{width: 20px;}
 
@@ -81,11 +94,17 @@
 
 @media (max-width: 480px){
 
-  .titleBox{height: 170px; gap: 10px 0;}
+  .titleBox .box{padding: 0 40px; height: 220px; gap: 15px 0;}
+  .titleBox .box span{font-size: 14px;}
   .titleBox h3{font-size: 20px;}
-  .titleBox span{font-size: 14px;}
+
   .tit{font-size: 16px;}
 
+}
+
+@media (max-width: 320px){
+
+  .titleBox .box{padding: 0 20px;}
 
 }
 
