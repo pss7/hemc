@@ -2,12 +2,12 @@
 $(function () {
 
   /* 서브 메뉴 */
-  $('.breadcrumbBox .depthBox > a').click(function(){
+  $('.breadcrumbBox .depthBox > a').click(function () {
 
-    if($(this).hasClass('active')){
+    if ($(this).hasClass('active')) {
       $(this).removeClass('active');
       $(this).next().slideUp();
-    }else{
+    } else {
       $(this).addClass('active');
       $(this).next().slideDown();
     }
@@ -15,5 +15,14 @@ $(function () {
     return false;
 
   });
+
+  //aos 초기화
+  $(window).load(function () {
+    $('#subWrap .subTopBox').addClass('active')
+    AOS.init({
+      duration: 2000
+    });
+  });
+
 
 });
