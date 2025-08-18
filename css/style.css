@@ -22,8 +22,8 @@
 #headerWrap .headerTopWrap .btnBox a{display: block; transition: all .3s;}
 #headerWrap .headerTopWrap .btnBox a:hover{transform: translateY(-7px);}
 #headerWrap .headerTopWrap .btnBox .search{width: 27px; height: 27px; background: url(../images/common/search_icon.png)no-repeat center;}
-#headerWrap .headerTopWrap .btnBox .security{width: 22px; height: 27px; background: url(../images/common/icon01.png)no-repeat center;}
-#headerWrap .headerTopWrap .btnBox .login{width: 31px; height: 24px; background: url(../images/common/icon02.png)no-repeat center;}
+#headerWrap .headerTopWrap .btnBox .signin{width: 22px; height: 27px; background: url(../images/common/icon01.png)no-repeat center;}
+#headerWrap .headerTopWrap .btnBox .signup{width: 31px; height: 24px; background: url(../images/common/icon02.png)no-repeat center;}
 #headerWrap .headerBottomWrap {display: flex; justify-content: center; background-color: #fff;}
 #headerWrap .headerBottomWrap .menu{display: flex; gap: 0;}
 #headerWrap .headerBottomWrap .menu li a:hover{font-weight: 700;}
