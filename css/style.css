@@ -100,14 +100,14 @@
 
   #headerWrap .headerBottomWrap{justify-content: flex-start;}
   #headerWrap .headerBottomWrap .sitemapBtn{flex-shrink: 0;}
-  #headerWrap .headerBottomWrap .menu{justify-content: center;}
-  #headerWrap .headerBottomWrap .menu li a{padding: 31px 60px;}
+  #headerWrap .headerBottomWrap .depth01{justify-content: center;}
+  #headerWrap .headerBottomWrap .depth01 li a{padding: 31px 60px;}
 
 }
 
 @media (max-width: 1280px){
 
-  #headerWrap .headerBottomWrap .menu li a{padding: 31px 55px;}
+  #headerWrap .headerBottomWrap .depth01 li a{padding: 31px 55px;}
   
   #headerWrap .sitemapBox .sitemapDepth01 li h2 a{padding: 20px; font-size: 22px;}
 

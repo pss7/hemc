@@ -806,7 +806,7 @@
 
 /* 연혁 */
 .historyBox .historyList{display: flex; flex-direction: column; align-items: center; position: relative;}
-.historyBox .historyList::after{content: ''; position: absolute; margin-left: -2px; left: 50%; top:18px; bottom: 515px; width: 4px; background-color: #ddd; }
+.historyBox .historyList::after{content: ''; position: absolute; margin-left: -2px; left: 50%; top:18px; bottom: 0; width: 4px; background-color: #ddd; z-index: -1;}
 .historyBox .historyList > li{position: relative; width: 50%;}
 .historyBox .historyList li .year{display: block; font-size: 35px; color: #000; font-weight: 700;}
 .historyBox .historyList li .list{margin-bottom: 25px;}
